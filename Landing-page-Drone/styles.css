@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #ffcd6d;
+
+}
+
+.container nav{
+    height: 100px;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container nav .logo{
+    display: flex;
+    align-items: center;
+}
+
+.container nav .logo h2{
+    font-size: 2rem;
+    font-weight: 800;
+    color: red;
+    font-family: "Lobster", sans-serif;
+} 
+
+
+.container nav .logo img{
+    transform: translateX(-250px);
+    animation: logo 1.5s 0s forwards;
+}
+
+@keyframes logo {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in;
+}
+
+nav .active,
+nav ul li a:hover{
+    color: #ff0000;
+}
+
+.container .hero_section{
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 24%;
+    align-items: center;
+}
+
+.hero_section .image_section{
+    position: relative;
+}
+
+.hero_section .image_section #mainBee{
+    position: absolute;
+    top: -5%;
+    right: -55%;
+    z-index: 1;
+}
+
+
+.hero_section .image_section #circle{
+    position: absolute;
+    right: -25%;
+    bottom: 8%;
+}
+
+.hero_section .text_section h2{
+    font-family: "Lobster", sans-serif;
+    color: #000;
+    font-size: 5rem;
+    text-shadow: 2px 2px #ff0000;
+}
+
+.text_section p{
+    font-size: 18px;
+}
+
+.text_section .buttons{
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.text_section .buttons button{
+    padding: 8px 32px;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    outline: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #d39a16;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in;
+}
+
+.text_section .buttons button:hover{
+    border: 3px solid #000;
+    color: #000;
+    background-color: transparent;
+}
+
+.buttons button.btn{
+    border: 3px solid #000;
+    color: #000;
+    background: transparent;
+}
+
+.buttons button.btn:hover{
+    color: #de9a16;
+    background: #fff;
+    border: 3px solid transparent;
+}
+
+.mobile_menu_btn i{
+font-size: 1.5rem;
+cursor: pointer;
+display: none;
+}
+
+#click{
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .mobile_menu_btn i{
+        display: block;
+    }
+
+    .container .hero_section{
+        flex-direction: column;
+    }
+
+    nav ul{
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        background: #e40b0b;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+        display: block;
+        text-align: center;
+        transition: all 0.4s ease-in-out;
+    }
+
+    #click:checked ~ ul{
+        left: 0;
+    }
+
+    #click:checked ~ .mobile_menu_btn i::before{
+      content: "/f00d";
+    }
+
+    nav ul li{
+        margin: 3rem 0;
+    }
+
+    nav .active,
+    nav ul li a:hover{
+    color: #de9a16;
+    border: 3px solid #de9a16;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+    .container nav{
+        padding: 2rem 1rem;
+    }
+
+    .container nav .logo h2{
+        font-size: 1.5rem;
+    }
+
+    .container nav .logo img{
+        width: 30%;
+    }
+
+    .container .hero_section{
+        padding: 1rem;
+    }
+
+    .hero_section .image_section #big{
+        width: 60%;
+    }
+
+    .hero_section .image_section #mainBee{
+        width: 100%;
+        right: 9%;
+    }
+
+    .hero_section .image_section #circle{
+        right: 25%;
+        bottom: -5%;
+        width: 20%;
+    }
+
+    .hero_section .text_section h2{
+        font-size: 4rem;
+    }
+
+    .text_section .buttons button{
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+
+}
